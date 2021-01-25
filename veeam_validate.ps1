@@ -84,4 +84,4 @@ $eSender="veeam@dexample.com"
 $attachments=get-childitem $reporting\$date\*.html
 $password = ConvertTo-SecureString '12345679' -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential ('admin@example.com.com', $password)
-Send-MailMessage -From $eSender -SmtpServer "smtp.office365.com" -useSSL -port 587 -Credential $credential -to $eReceiver -Subject "[Tah] Veeam Validation report" -Body "Here are the validation reports. `n `n The validation took: `n $days `n $hours `n $min `n $sec `n " -Attachments $attachments
+Send-MailMessage -From $eSender -SmtpServer "smtp.office365.com" -useSSL -port 587 -Credential $credential -to $eReceiver -Subject "Veeam Validation report" -Body "Here are the validation reports. `n `n The validation took: `n $days `n $hours `n $min `n $sec `n " -Attachments $attachments
