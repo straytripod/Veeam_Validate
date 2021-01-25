@@ -10,4 +10,4 @@
  </br> has an email finction and will attempt to send the reports in an email with the amount of time it took to run.
 </br>
 </br>
-Make sure you confiure email setting within the script or it will fail when run.
+Make sure you confiure the email setting and varibles within the script or it will fail when run.
