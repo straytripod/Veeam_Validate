@@ -1,13 +1,4 @@
 # Veeam_Validate
-
-.CREATED BY
-</br>StrayTripod
-</br>
-</br>
-.LAST MODIFIED
-    1/25/2021
-</br>
-</br>
 .SYSNOPSIS
 </br> Validates Veeam backup jobs using the PowerShell backup validation tool.
 </br>
