@@ -8,4 +8,6 @@
  </br> all backup job found on the Veeam server and finally saves an HTML report to the new directory. The script will self manage
  </br> by deleting the oldest date direcotry after 4 have been created. So you can use Task Scheduler to run this. The script
  </br> has an email finction and will attempt to send the reports in an email with the amount of time it took to run.
-
+</br>
+</br>
+Make sure you confiure email setting within the script or it will fail when run.
