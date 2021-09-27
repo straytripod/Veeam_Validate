@@ -3,16 +3,18 @@
     StrayTripod
 
 .LAST MODIFIED
-    1/25/2021
+    9/27/2021
 
 .SYSNOPSIS
     Validates Veeam backup jobs using the PS backup validation tool.
 
 .DESCRIPTION 
     Run on the Veeam server. Creates a report directory, a date direcotry, runs the validation on
-    all backup job found on the Veeam server and finally saves an HTML report to the new directory. The
-    script will self manage by deleting the oldest date direcotry after 4 have been created. The script
+    all backup jobs that are found on the Veeam server. Finally it saves an HTML report to the new directory. The
+    script will self manage by deleting the oldest date directory after 4 have been created. The script
     has an email finction and will attempt to send the reports in an email.
+.NOTE
+This script will validate every job found including the disabled and manualy scheduled.
 #>
 
 # setting varibles
@@ -64,8 +66,6 @@ Measure-Command {get-validate} > $reporting\$date\timer.log
 
 # Write finished duration to a log
 
-###Write-Output "Finished at: $time" > $reporting\$date\timer.log
-
 # Setup durration for email
 
 $timer = @(Get-Content $reporting\$date\timer.log)
@@ -83,7 +83,7 @@ $new_report =Get-ChildItem $reporting  |
 $files=Get-ChildItem $reporting\$new_report\*.html | Select-object -ExpandProperty name 
 
 #email
-# $eReceiver="user1@example.com", "user2@example.com"
+# $eReceivers="user1@example.com", "user2@example.com"
 $eReceiver="administrators@example.com"
 $eSender="veeam@dexample.com"
 $attachments=get-childitem $reporting\$date\*.html
