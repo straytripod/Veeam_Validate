@@ -12,6 +12,6 @@
 </br>
 Make sure you confiure the email setting and varibles within the script or it will fail when run.
 </br>
-Veeam_Validation.ps1: Attempts to validate all jobs 
+Veeam_Validation.ps1: Attempts to validate all jobs found.
 </br>
-v_val_currated.ps1: Attempts to validate Jobs that are not disabled or manually scheduled.
+v_val_currated.ps1: Attempts to validate jobs that are not disabled, or manually scheduled.
