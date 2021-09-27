@@ -21,6 +21,7 @@ $time=date
 $count=Get-ChildItem $reporting | measure-Object | %{$_.Count}
 $reporting='C:\Reports'
 $exists=test-path $reporting
+$exists2=test-path "$reporting\$date"
 # Test for direcory
 if ($exists -eq $false) {
     mkdir $reporting
@@ -43,7 +44,11 @@ $jobs = get-vbrbackup
 #Validation Function
 
 set-location "C:\Program Files\Veeam\Backup and Replication\Backup"
-mkdir $reporting\$date
+#Check if a new reports directory exists
+if ($exists2 -eq $false) {
+    mkdir $reporting\$date
+    } else {Write-Host 'The New Reports directory exists. Moving on!'}
+
 
 # setup function for the validation
 
